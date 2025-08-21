@@ -1,0 +1,191 @@
+ 
+
+ 
+
+Introducción 
+
+Buen día 
+
+Mi nombre es John Carrillo, Product Owner de la Célula CXC3. En esta capsula de información veremos la última actualización en configuración de solicitudes que permite definir de forma más sencilla el orden en que el motor de flujos procesa los flujos de negocio y por consecuencia el orden con el que se atenderán las solicitudes registradas en Smartflex. 
+
+ 
+
+De acuerdo con el modelo de operación de nuestros clientes y a los tiempos de respuesta establecidos por los entes reguladores es necesario que unas solicitudes se atiendan de forma más prioritaria que otras, e incluso puede que requiera que la misma solicitud se atienda con diferente prioridad dependiendo si ha sido registrada por petición del cliente, por un proceso masivo o de backoffice. 
+
+ 
+
+Por ejemplo, una solicitud de aprobación de ajustes de facturación, resultado de un reclamo, se deba atender con mayor prioridad que aquellas que son registradas por el proceso interno “Registrar ajustes de facturación masivamente”. 
+
+ 
+
+Previamente 
+
+En releases anteriores al 51, al registrar una solicitud, está queda con la prioridad por defecto configurada en el parámetro DEFAULT_PRIORITY. 
+
+Y en los escenarios donde se requería que una solicitud se registrara con una prioridad diferente, se podía modificar por medio de configuración en el Configurador de solicitudes (PSCRE). Aunque, esta opción solo estaba disponible para solicitudes configurables. 
+
+O se podia hacer uso del parámetro PRIORITY_TAGNAME donde se podía configurar las solicitudes o un aplicativo que registre solicitudes para que tengan la prioridad mínima. 
+
+ 
+
+Sin embargo, estos mecanismos no cubrían todos los escenarios solicitados por nuestros clientes.  
+
+ 
+
+Con estos mecanismos, por ejemplo, una solicitud de reconexión tendría la misma prioridad que otras solicitudes registradas por el motor de gestión de cobro. 
+
+ 
+
+Lo nuevo 
+
+ 
+
+Ahora con la liberación de la FT-2633 en el release 51, se ha entregado una nueva opción que permite configurar en un solo punto la prioridad para todas las solicitudes. Cabe resaltar que las solicitudes siguen registrándose con la prioridad por defecto, esta opción se debe utilizar para los casos en los que se requiere una prioridad diferente. 
+
+ 
+
+La nueva opción "Prioridades por tipo de solicitud (PRIRT)" es una aplicativo de tipo maestro detalle, de la capa Datos Básicos, que me permite configurar la prioridad de cada una de las solicitudes o la prioridad que tendrá la solicitud cuando sea registrada por otra aplicación. 
+
+ 
+
+Ejemplo de Configuración 
+
+La aplicación "Prioridades por tipo de solicitud (PRIRT)" es de ejecución directa por lo que lo podemos ejecutar desde el menú principal. PRIRT 
+
+ 
+
+Para definir la prioridad de una solicitud, podemos adicionar un nuevo registro indicando la solicitud y el valor de la prioridad que se le desea asignar. Solo puede existir un registro para la solicitud sin una aplicación asociada. 
+
+ 
+
+Hacer el ejemplo de adicionar una solicitud 
+
+Ajustes de Facturación | 10 
+
+ 
+
+En los casos que una solicitud se pueda registrar por más de un aplicativo, podemos configurar la prioridad que tendrá la solicitud cuando sea creada por cada uno de los aplicativos. Para esto, podemos adicionar un registro indicando la solicitud, la aplicación que la registra y el valor de la prioridad. Solo puede existir un registro para cada combinación de solicitud y aplicación. 
+
+ 
+
+Hacer el ejemplo de adicionar una solicitud con aplicación 
+
+Ajustes de Facturación | AJMAS | 150 
+
+ 
+
+ 
+
+Ejemplo de Resultado 
+
+ 
+
+La prioridad indica el orden en que serán procesadas las solicitudes, es decir, entre menor sea el número, mayor prioridad tendrá para ser procesada por el motor de flujos y por ende mayor prioridad tendrá la solicitud para ser atendida. 
+
+ 
+
+Por ejemplo, teniendo en cuenta la configuración anterior tenemos una prioridad por defecto de 100 según el parámetro DEFAULT_PRIORITY, una prioridad definida para la solicitud de Ajustes de Facturación de 10 y una prioridad definida para la solicitud Ajustes de Facturación cuando se registra por el aplicativo “Registrar ajustes de facturación masivamente” de 150. 
+
+ 
+
+ 
+
+Dado lo anterior, cuando se registra una solicitud de un tipo que no está configurado en la opción “Prioridades por tipo de solicitud”, como por ejemplo una instalación de agua, tomaría el valor de la prioridad por defecto, en este caso 100. 
+
+ 
+
+Al registrar una solicitud de un tipo que tiene configuración de prioridad, como una solicitud de “Ajustes de Facturación” tomará el valor de la prioridad configurada, en este caso como no hay una configuración específica para la solicitud y el ejecutable que la registra “Registrar ajustes de facturación”, tomaría la prioridad configurada para la solicitud sin un ejecutable en particular, es decir la prioridad 10. 
+
+ 
+
+Y en caso de que la solicitud de “Ajustes de Facturación” sea registrada por el ejecutable “Registrar ajustes de facturación masivamente”, tomaría la prioridad definida para esta solicitud y ejecutable, es decir 150. 
+
+ 
+
+Los flujos de estas solicitudes quedan la cola del motor de flujos y cuando el motor va a tomar las solicitudes a procesar, ordenará por la prioridad y tomará primero la solicitud “Ajustes de Facturación” con prioridad de 10, luego la solicitud de “Instalación de agua” con prioridad de 100 y dejará para procesar al final la solicitud de “Ajustes de Facturación” con prioridad de 150 
+
+ 
+
+Cierre 
+
+Les agradecemos la atención prestada en esta cápsula y nos veremos próximamente en otras cápsulas y ventanas de actualización de producto. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+#### **1. Escenario Éxito: Simulación de iniciar productos ** 
+
+**Dado que:**  
+
+- Se tiene una solicitud de Start backdated services 
+
+- **Y** Se tienen productos a iniciar en la solicitud (incluyendo producto de un propietario) 
+
+ 
+
+**Cuando:**  
+
+- Se ejecute el nuevo servicio “Simular activación de servicios en Start backdated services” 
+
+ 
+
+**Entonces:**  
+
+- El sistema debe dejar en estado Activo/Conexión los productos para los cuales se va a realizar un Start. Tambien aplica para productos de propietarios a iniciar 
+
+--- 
+
+#### **2. Escenario Éxito: Simulación de detener productos (No propietario)** 
+
+**Dado que:**  
+
+- Se tiene una solicitud de Start backdated services 
+
+- **Y** Se tienen productos a detener en la solicitud (sin incluir producto de un propietario) 
+
+ 
+
+**Cuando:**  
+
+- Se ejecute el nuevo servicio “Simular activación de servicios en Start backdated services” 
+
+ 
+
+**Entonces:**  
+
+- El sistema debe dejar en estado Inicio de Retiro Voluntario los productos para los cuales se va a realizar un Stop. No aplica para productos de propietarios a detener 
+
+--- 
+
+#### **3. Escenario Éxito: Simulación de detener productos de un propietario** 
+
+**Dado que:**  
+
+- Se tiene una solicitud de Start backdated services 
+
+- **Y** Se tienen productos de un propietario a detener en la solicitud  
+
+ 
+
+**Cuando:**  
+
+- Se ejecute el nuevo servicio “Simular activación de servicios en Start backdated services” 
+
+ 
+
+**Entonces:**  
+
+- El sistema debe dejar en estado “Suspendido por acuerdo de propietario” los productos de un propietario que se van a detener 
+
+ 
+
+ 
+
+ 
+
+ 
