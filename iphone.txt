@@ -1,0 +1,55 @@
+El primer iPhone fue presentado por Steve Jobs el 9 de enero de 2007 en la conferencia Macworld en San Francisco, y salió a la venta en EE. UU. el 29 de junio de 2007. Su creación fue un proceso largo y altamente secreto dentro de Apple, conocido internamente como "Project Purple".
+
+Aquí tienes un resumen de cómo se creó:
+
+1. Origen de la idea
+
+A inicios de los 2000, Apple ya había revolucionado la música con el iPod y la venta de canciones en iTunes.
+
+Steve Jobs temía que los teléfonos móviles con reproductores de música integrados reemplazaran al iPod, por lo que decidió que Apple debía crear su propio “teléfono inteligente”.
+
+2. El proyecto secreto (Project Purple)
+
+Jobs reunió a un pequeño grupo de ingenieros de élite de Apple y los aisló en un edificio de la sede en Cupertino.
+
+Se impusieron normas estrictas de confidencialidad: muchos empleados no sabían en qué trabajaban exactamente sus compañeros.
+
+A este proyecto lo llamaron "Project Purple", y la oficina se conocía como la "Purple Dorm" porque los ingenieros prácticamente vivían allí.
+
+3. Tecnología clave: la pantalla táctil
+
+Apple llevaba años experimentando con pantallas táctiles para posibles tablets (el prototipo inicial del iPad existía antes que el iPhone).
+
+Se decidió usar una pantalla multitáctil capacitiva, mucho más avanzada que las resistivas usadas en la época (que requerían stylus).
+
+Esto permitió usar gestos con los dedos (tocar, deslizar, pellizcar para hacer zoom), lo que fue revolucionario en comparación con los teléfonos de teclado físico como el BlackBerry o el Motorola Razr.
+
+4. Colaboración con otras empresas
+
+Apple negoció con Cingular Wireless (hoy AT&T) para ofrecer el iPhone en exclusiva en EE. UU.
+
+La pantalla fue fabricada por Corning, usando un vidrio especial llamado Gorilla Glass, resistente a rayones.
+
+Samsung fabricó el procesador (ARM11 de 412 MHz) del primer iPhone.
+
+5. El diseño final
+
+Pantalla de 3.5 pulgadas.
+
+Almacenamiento de 4 GB o 8 GB.
+
+Cámara de 2 megapíxeles.
+
+Conexión EDGE (2G), Wi-Fi y Bluetooth.
+
+Sin App Store todavía: solo venía con las apps nativas (Teléfono, iPod, Safari, Mail, etc.).
+
+Su precio inicial fue de 499 USD (4 GB) y 599 USD (8 GB).
+
+6. Impacto
+
+El iPhone fue considerado un “iPod con pantalla táctil + teléfono + navegador de Internet” en un solo dispositivo.
+
+Revolucionó la industria: en poco tiempo cambió el estándar de los teléfonos móviles, haciendo obsoletos los teclados físicos.
+
+La App Store llegaría un año después (2008), potenciando aún más el ecosistema.
