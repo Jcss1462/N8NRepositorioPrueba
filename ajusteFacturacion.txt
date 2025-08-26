@@ -1,0 +1,86 @@
+Perfecto 🚀 Te doy una guía general sobre cómo crear ajustes de facturación, que se aplican en la mayoría de sistemas (ERP, sistemas de facturación, bancos, servicios públicos, etc.).
+
+Los ajustes de facturación son operaciones contables que modifican una factura ya emitida, con el fin de corregir, complementar o regularizar valores.
+
+🔹 1. ¿Cuándo se necesita un ajuste de facturación?
+
+Errores en el valor de una factura (ej. cobraste $1.200 en lugar de $1.020).
+
+Cambios de condiciones comerciales (descuentos aplicados después de la emisión).
+
+Devoluciones parciales o totales.
+
+Corrección de impuestos mal calculados.
+
+Ajustes por redondeo en montos o diferencias en centavos.
+
+Cargos adicionales no facturados inicialmente (ej. intereses de mora).
+
+🔹 2. Tipos de ajustes más comunes
+
+Notas crédito
+
+Disminuyen el valor de la factura.
+
+Ejemplo: se devuelve mercancía, o se aplica un descuento adicional.
+
+Notas débito
+
+Aumentan el valor de la factura.
+
+Ejemplo: se cobra un cargo adicional, intereses, o se corrige un valor menor.
+
+Re-facturación (Factura de reemplazo)
+
+Se anula la factura original y se genera una nueva con los valores corregidos.
+
+Ajuste contable automático
+
+El sistema genera un asiento interno (ej. diferencias por tipo de cambio, redondeo, etc.).
+
+🔹 3. Proceso para crear ajustes de facturación
+a) Identificar la necesidad del ajuste
+
+Verificar la factura original.
+
+Revisar contrato, pedido o soporte que justifique el cambio.
+
+b) Definir el tipo de ajuste
+
+¿Es un aumento, disminución o reemplazo?
+
+Escoger si aplica nota crédito, nota débito o refacturación.
+
+c) Registrar el ajuste en el sistema de facturación
+
+Seleccionar la factura original.
+
+Indicar monto a ajustar.
+
+Especificar motivo (obligatorio en la mayoría de ERPs y por norma legal).
+
+d) Impacto contable y tributario
+
+El ajuste debe reflejarse en la contabilidad.
+
+Afecta los reportes de IVA, retenciones y demás impuestos.
+
+En facturación electrónica (ej. Colombia con la DIAN), la nota crédito/débito debe transmitirse y validarse ante la entidad tributaria.
+
+e) Comunicación al cliente
+
+Enviar la nota de ajuste al cliente (documento legal).
+
+Actualizar el saldo pendiente si aplica.
+
+🔹 4. Buenas prácticas
+
+Siempre documentar la razón del ajuste.
+
+Evitar múltiples notas sobre la misma factura (puede complicar auditorías).
+
+Usar códigos estandarizados de motivo (ej. devolución, descuento, interés, error de digitación).
+
+Configurar en el sistema límites y autorizaciones (ej. solo un jefe puede aprobar notas débito/crédito).
+
+Automatizar ajustes pequeños (ej. diferencias de centavos por redondeo
